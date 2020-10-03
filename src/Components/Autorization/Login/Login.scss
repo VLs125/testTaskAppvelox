@@ -1,0 +1,91 @@
+@import './variables.scss';
+@import './mixins.scss';
+.login-main{
+    display: flex;
+    flex-direction: column;
+    width: 782px;
+    height: 768px;
+
+}
+
+.login-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 155px;
+
+}
+.login-title{
+    @include thirdFontStyle();
+}
+.login-text-top{
+    margin-top: 15px;
+    margin-bottom: 34px;
+    a{
+        padding-left: 3px;
+        color: $secondColor;
+    }
+}
+.login-text-bottom{
+    margin-top: 15px;
+    margin-bottom: 29px;
+    a{
+        padding-left: 3px;
+        color: $secondColor;
+        
+    }
+}
+.login-form{
+    flex-direction: column;
+
+}
+.login-label-email{
+    margin-bottom: 10px;
+    @include labelForm();
+}
+.login-label-password{
+    margin-top: 10px;
+    @include labelForm();
+}
+.login-button{
+    background-color: $thirdColor;
+    @include labelForm();
+    color: white;
+}
+.login-logo{
+    margin-top: 183px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+   
+
+}
+
+.autorization{
+    display: flex;
+    flex-direction: row;
+
+}
+.autorization-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 768px;
+    width: 584px;
+    background-color:$mainColor ;
+
+}
+
+.autorization-title{
+    margin-bottom: 72px;
+    @include thirdFontStyle();
+
+    color: $whiteColor;
+}
+
+.autorization-text{
+    margin-top: 52px;
+    @include mainFontStyle();
+    color: $whiteColor;
+}

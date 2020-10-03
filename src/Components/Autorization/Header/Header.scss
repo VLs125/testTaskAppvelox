@@ -1,0 +1,37 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+.header-main{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid #EBE7FF;
+    margin-left: 40px;
+    margin-right: 40px;
+
+
+}
+.header-logo{
+    margin-top: 32px;
+    margin-bottom: 3rem;
+   @include secondFontStyle();
+
+}
+
+
+.header-text{
+    margin-top: 30px;
+    @include mainFontStyle();
+    margin-bottom: 3rem;
+    color: $thirdColor;
+
+ a{
+     text-decoration: none;
+     color: $thirdColor;
+ }
+ a:hover{
+    color: $thirdColor;
+ }
+ a:visited{
+    color: $thirdColor;
+ }
+}
