@@ -1,45 +1,61 @@
-import React from 'react';
-const Registration = ()=>{
+import React from 'react'
+import './Registration.scss'
+import Header from '../Header/Header'
+import StepperExample from './StepperExample';
+const Registration = () => {
+    return (
+            <div className='autorization'>
+                <div className='login-main'>
+                    <Header/>
+                    <div className='login-content'>
+                        <div className='login-title'>Регистрация</div>
+                        <div className='login-text-top'>
+                            У вас уже есть аккаунт?<a href='/login'>Войти</a>
+                        </div>
+                        <StepperExample/>
+                        <form className='login-form'>
+                            <label >
+                                <input className='login-label-email'  type="email" name="email" placeholder='Почта' />
+                              <br/>
+                              <input className='login-label-phone'  type="text" name="phone" placeholder='Телефон' />
+                              <br/>
+                              <input className='login-label-password'  type="password" name="password" placeholder='Пароль' />
+                              <br/>
+                                <input className='login-label-repeatPassword'  type="password" name="repeatPassword" placeholder=' Повторите пароль' />
+
+                            </label>
+                           
+                        
+                        </form>
+                       
+                       
+                        <div className='login-text-bottom'>
+                            Забыли пароль?<a href='/registration'>Восстановить</a>
+                        </div>
+                        <button className='login-button' type="submit">Войти</button>
+                    </div>
+                    <div className="login-logo">
+                        <img src={require('../../Img/logo.png')} alt="logo"/>
+
+                    </div>
+                </div>
+                <div className='autorization-content'>
+                    <div className='autorization-title'>
+                    Начните следить за своим<br/> здоровьем вместе с нами!
+                    </div>
+                    <div className="autorization-image">
+                        <img src={require('../../Img/registration.png')} alt="logo"/>
+
+                    </div>
+                    <div className='autorization-text'>
+                    Вместе с нами медицина стала проще!
+                    </div>
+
+                </div>
+            </div>
 
 
-  return(
-        <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <form>
-                <div className="form-group text-left">
-                <label htmlFor="exampleInputEmail1">Email address</label>
-                <input type="email" 
-                       className="form-control" 
-                       id="email" 
-                       aria-describedby="emailHelp" 
-                       placeholder="Enter email"
-                />
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div className="form-group text-left">
-                    <label htmlFor="exampleInputPassword1">Password</label>
-                    <input type="password" 
-                        className="form-control" 
-                        id="password" 
-                        placeholder="Password"
-                    />
-                </div>
-                <div className="form-group text-left">
-                    <label htmlFor="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" 
-                        className="form-control" 
-                        id="confirmPassword" 
-                        placeholder="Confirm Password"
-                    />
-                </div>
-                <button 
-                    type="submit" 
-                    className="btn btn-primary"
-                >
-                    Register
-                </button>
-            </form>
-        </div>
-    )
-}
+        );
+    }
 
 export default Registration

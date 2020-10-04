@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 155px;
+    margin-top: 18px;
 
 }
 .login-title{
@@ -44,7 +44,14 @@
     margin-bottom: 10px;
     @include labelForm();
 }
+.login-label-phone{
+    @include labelForm();
+}
 .login-label-password{
+    margin-top: 10px;
+    @include labelForm();
+}
+.login-label-repeatPassword{
     margin-top: 10px;
     @include labelForm();
 }
@@ -54,6 +61,7 @@
     color: white;
 }
 .login-logo{
+    margin-top: 183px;
     margin-bottom: 30px;
     margin-left: 40px;
    
@@ -77,6 +85,8 @@
 }
 
 .autorization-title{
+   
+    justify-content: center;
     margin-bottom: 72px;
     @include thirdFontStyle();
 

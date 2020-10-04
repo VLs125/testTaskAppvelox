@@ -2,7 +2,6 @@ import React from 'react'
 import './Login.scss'
 import Header from '../Header/Header'
 const Login = () => {
-    {
         return (
             <div className='autorization'>
                 <div className='login-main'>
@@ -29,7 +28,7 @@ const Login = () => {
                         <button className='login-button' type="submit">Войти</button>
                     </div>
                     <div className="login-logo">
-                        <img src={require('./logo.png')} alt="logo"/>
+                        <img src={require('../../Img/logo.png')} alt="logo"/>
 
                     </div>
                 </div>
@@ -38,7 +37,7 @@ const Login = () => {
                         Добро Пожаловать!
                     </div>
                     <div className="autorization-image">
-                        <img src={require('./Frame.png')} alt="logo"/>
+                        <img src={require('../../Img/Frame.png')} alt="logo"/>
 
                     </div>
                     <div className='autorization-text'>
@@ -50,6 +49,6 @@ const Login = () => {
 
 
         );
-    }
+    
 }
 export default Login
