@@ -1,6 +1,6 @@
 @import '../../../mixins.scss';
 @import '../../../variables.scss';
-.login-main{
+.registration-main{
     display: flex;
     flex-direction: column;
     width: 782px;
@@ -8,7 +8,7 @@
 
 }
 
-.login-content{
+.registration-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,10 +16,10 @@
     margin-top: 18px;
 
 }
-.login-title{
+.registration-title{
     @include thirdFontStyle();
 }
-.login-text-top{
+.registration-text-top{
     margin-top: 15px;
     margin-bottom: 34px;
     a{
@@ -27,40 +27,9 @@
         color: $secondColor;
     }
 }
-.login-text-bottom{
-    margin-top: 15px;
-    margin-bottom: 29px;
-    a{
-        padding-left: 3px;
-        color: $secondColor;
-        
-    }
-}
-.login-form{
-    flex-direction: column;
 
-}
-.login-label-email{
-    margin-bottom: 10px;
-    @include labelForm();
-}
-.login-label-phone{
-    @include labelForm();
-}
-.login-label-password{
-    margin-top: 10px;
-    @include labelForm();
-}
-.login-label-repeatPassword{
-    margin-top: 10px;
-    @include labelForm();
-}
-.login-button{
-    background-color: $thirdColor;
-    @include labelForm();
-    color: white;
-}
-.login-logo{
+
+.registration-logo{
     margin-top: 183px;
     margin-bottom: 30px;
     margin-left: 40px;

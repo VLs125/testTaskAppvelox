@@ -7,9 +7,9 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Check from "@material-ui/icons/Check";
 import StepConnector from "@material-ui/core/StepConnector";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-
+import TextField from '@material-ui/core/TextField';
+import './Stepper.scss'
 const QontoConnector = withStyles({
   alternativeLabel: {
     top: 10,
@@ -74,9 +74,9 @@ function QontoStepIcon(props) {
       {completed ? (
         <Check className={classes.completed} />
       ) : (
-        <div className={classes.circle} />
-      )}
-     {icons[String(props.icon)]}
+          <div className={classes.circle} />
+        )}
+      {icons[String(props.icon)]}
     </div>
   );
 }
@@ -106,46 +106,120 @@ const useStyles = makeStyles((theme) => ({
   instructions: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1)
+  },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
   }
 }));
 
+
+
 function getSteps() {
-  return ["Select campaign settings", "Create an ad group", "Create an ad"];
+  return ["Данные для входа", "Личная информация", "Представители"];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return "Select campaign settings...";
+      return <form className='registration-form'>
+        <label >
+          <input className='registration-label-email' type="email" name="email" placeholder='Почта' />
+          <br />
+          <input className='registration-label-phone' type="text" name="phone" placeholder='Телефон' />
+          <br />
+          <input className='registration-label-password' type="password" name="password" placeholder='Пароль' />
+          <br />
+          <input className='registration-label-repeatPassword' type="password" name="repeatPassword" placeholder=' Повторите пароль' />
+          <div className='registration-text-bottom'>
+          <input className='registration-label-checkbox' type="checkbox" name="agree" />
+          <span className='registration-label-textAgree'>Я согласен на:</span>
+          </div>
+          <div>
+          <ul>
+          <li><a target="_blank" href="http://www.consultant.ru/document/cons_doc_LAW_61801/">Обработку персональных данных(ФЗ 152)</a></li>
+          <li>Передачу персональных данных третьим лицам</li>
+          <li>Обращение для информирования и напоминания</li>
+          </ul>
+          </div>
+     
+        </label>
+
+
+      </form>;
     case 1:
-      return "What is an ad group anyways?";
+      return <form className='registration-form'>
+        <label >
+          <input className='registration-label-surname' type="text" name="surname" placeholder='Фамилия' />
+          <br />
+          <input className='registration-label-name' type="text" name="name" placeholder='Имя' />
+          <br />
+          <input className='registration-label-middlename' type="text" name="middlename" placeholder='Отчество' />
+          <br />
+          <div className='registration-container-sex'>
+          <span className='registration-sex-text'>Пол:</span>
+          <div className='registration-radio-btn'>	<input id="radio-1" type="radio" name="radio" value="M" checked/>
+	        <label for="radio-1">М</label> 
+          </div>
+          <div className='registration-radio-btn'><input id="radio-2" type="radio" name="radio" value="G"/>
+	        <label for="radio-2">Ж</label></div>
+          <div>
+          <TextField
+        id="date"
+        label="Birthday"
+        type="date"
+        defaultValue="dd-mm-YYYY"
+        InputLabelProps={{
+          shrink: true,
+        }}></TextField>
+        </div>
+        </div>
+          <br />
+          <input className='registration-label-adressRegistration' type="text" name="middlename" placeholder='Адрес регистрации' />
+          <br />
+          <input className='registration-label-adressLocation' type="text" name="middlename" placeholder='Адрес места жительства' />
+         
+        </label>
+
+
+      </form>;
     case 2:
-      return "This is the bit I really care about!";
+      return <form className='registration-form'>
+        <label >
+          <input className='registration-label-familySurname' type="text" name="surname" placeholder='Фамилия' />
+          <br />
+          <input className='registration-label-familyName' type="text" name="name" placeholder='Имя' />
+          <br />
+          <input className='registration-label-familyMiddlename' type="text" name="middlename" placeholder='Отчество' />
+          <br />
+          <input className='registration-label-familyPhone' type="text" name="phone" placeholder='Телефон' />
+        </label>
+
+
+      </form>;;
     default:
       return "Unknown step";
   }
 }
 
 export default function StepperExample() {
-  const classes = useStyles();
+ const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
+
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
-
   return (
     <div className={classes.root}>
-        <Stepper
+      <Stepper
         alternativeLabel
         activeStep={activeStep}
         connector={<QontoConnector />}
@@ -156,41 +230,16 @@ export default function StepperExample() {
           </Step>
         ))}
       </Stepper>
-      <div>
-        {activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>
-              All steps completed - you&apos;re finished
-            </Typography>
-            <Button onClick={handleReset} className={classes.button}>
-              Reset
-            </Button>
-          </div>
-        ) : (
-          <div>
-            <Typography className={classes.instructions}>
-              {getStepContent(activeStep)}
-            </Typography>
-            <div>
-              <Button
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                className={classes.button}
-              >
-                Back
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleNext}
-                className={classes.button}
-              >
-                {activeStep === steps.length - 1 ? "Finish" : "Next"}
-              </Button>
+  
+          <Typography className={classes.instructions}>
+            {getStepContent(activeStep)}
+          </Typography>
+            <div className='registration-button-container'>
+            <button onClick={handleNext} className='registration-button' type="submit">{activeStep === steps.length - 1 ? "Зарегистрироваться" : "Далее"}</button>            
             </div>
-          </div>
-        )}
-      </div>
+       
+
+    
     </div>
   );
 }
