@@ -17,11 +17,8 @@ const Login = () => {
                               <br/>
                                 <input className='login-label-password'  type="password" name="password" placeholder=' Пароль' />
                             </label>
-                           
                         
                         </form>
-                       
-                       
                         <div className='login-text-bottom'>
                             Забыли пароль?<a href='/registration'>Восстановить</a>
                         </div>

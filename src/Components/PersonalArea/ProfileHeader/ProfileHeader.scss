@@ -1,0 +1,41 @@
+@import "../.././../mixins.scss";
+@import "../.././../variables.scss";
+
+
+.headerProfile-main{
+    display:flex;
+    width: 1176px;
+    height: 55px;
+    background: $secondColor;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid #EBE7FF;
+   
+
+
+}
+.headerProfile-logo{
+    margin-top: 32px;
+    margin-bottom: 3rem;
+   @include secondFontStyle();
+
+}
+
+
+.headerProfile-text{
+    margin-top: 30px;
+    @include mainFontStyle();
+    margin-bottom: 3rem;
+    color: $thirdColor;
+
+ a{
+     text-decoration: none;
+     color: $thirdColor;
+ }
+ a:hover{
+    color: $thirdColor;
+ }
+ a:visited{
+    color: $thirdColor;
+ }
+}
