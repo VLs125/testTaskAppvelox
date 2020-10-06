@@ -2,16 +2,28 @@
 @import "../.././../variables.scss";
 
 .sidebar_main{
-    display: flex;
-    flex-direction: column;
-    width: 190px;
-    height: 768px;
-    background-color: $mainColor;
+display: flex;
+flex-direction: column;
+width: 190px;
+height: 768px;
+background-color: $mainColor;
 }
 .sidebar_logo{
 
 }
-.sidebar_logo-text{
+.active > div{
+    background-color: white;
+    span{
+        color: $thirdColor
+
+    }
+    path{
+        fill: $thirdColor;
+    }
+
+}
+
+.sidebar_text_logo{
     display: flex;
     margin-top: 20px;
     margin-left: 20px;
@@ -19,4 +31,43 @@
     @include mainFontStyle();
     font-weight: 400;
     color: white;
+}
+.sidebar_text_profile{
+    @include sidebarText();
+}
+.sidebar_text_hospital{
+    @include sidebarText();
+}
+.sidebar_text_message{
+ @include sidebarText();
+
+}
+.sidebar_text_test{
+    @include sidebarText();
+}
+.sidebar_text_faq{
+    @include sidebarText();
+}
+// Контейнеры 
+.sidebar_container_profile{
+    @include sidebarContainer();
+}
+.sidebar_container_hospital{
+    @include sidebarContainer();
+}
+.sidebar_container_message{
+    @include sidebarContainer();
+}
+.sidebar_container_test{
+    @include sidebarContainer();
+}
+.sidebar_container_faq{
+    @include sidebarContainer();
+}
+.sidebar_img_profile{
+    fill: white;
+}
+.sidebar_icon{
+    margin-bottom: 10px;    
+    margin-left: 20px;
 }

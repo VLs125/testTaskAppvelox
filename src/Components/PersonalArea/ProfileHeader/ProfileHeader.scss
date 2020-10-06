@@ -15,9 +15,11 @@
 
 }
 .headerProfile-logo{
-    margin-top: 32px;
-    margin-bottom: 3rem;
-   @include secondFontStyle();
+   display: flex;
+   align-items: center;
+   @include thirdFontStyle();
+   margin-left: 40px;
+   color: white;
 
 }
 

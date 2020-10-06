@@ -18,7 +18,10 @@ function App() {
     <Route  path='/registration' component={Registration} />
     <Route  path='/step' component={StepperExample} />
     <Route  path='/profile' component={Profile} />
-
+    <Route  path='/hospitals' component={Profile} />
+    <Route  path='/message' component={Profile} />
+    <Route  path='/faq' component={Profile} />
+    <Route  path='/test' component={Profile} />
     </Switch>
     </div>
 

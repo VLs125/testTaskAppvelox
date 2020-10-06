@@ -1,39 +1,66 @@
 import React from 'react'
-import'./Sidebar.scss'
+import { NavLink, Link } from 'react-router-dom'
+import './Sidebar.scss'
+import { SVGFaq } from './SVG/SVGFaq'
+import { SVGHospital } from './SVG/SVGHospital'
+import { SVGMessage } from './SVG/SVGMessage'
+import { SVGProfile } from './SVG/SVGProfile'
+import { SVGTest } from './SVG/SVGTest'
 
-const Sidebar = ()=>{
-    return(<div className='sidebar_main'>
+const Sidebar = () => {
+    return (<div className='sidebar_main'>
+
         <div className='sidebar_logo'>
-            <span className='sidebar_logo-text'>Логотип</span>
+            <span className='sidebar_text_logo'>Логотип</span>
         </div>
-        <div>
-        
-         <img className='sidebar_img_profile' src={require('../../Img/profile.png')} alt="logo"/>
-         <span className='sidebar_text_profile'>Профиль</span>
+
+        <NavLink activeClassName='active' to='/profile'>
+        <div className='sidebar_container_profile'>
+            <div className='sidebar_icon'>
+            <SVGProfile color='red'/>
+            </div>
+            <span className='sidebar_text_profile'>Профиль</span>
         </div>
-        <div>
-            
-            <img className='sidebar_img_hospital' src={require('../../Img/hospital.png')} alt="logo"/>
+        </NavLink>
+
+        <NavLink activeClassName='active' to='/hospitals'>
+        <div className='sidebar_container_hospital'>
+        <div className='sidebar_icon'>
+            <SVGHospital />
+        </div>
             <span className='sidebar_text_hospital' >Врачи и клиники</span>
         </div>
-        <div>
-           
-            <img className='sidebar_img_message' src={require('../../Img/message.png')} alt="logo"/>
+        </NavLink>
+
+        <NavLink activeClassName='active' to='/message'>
+        <div className='sidebar_container_message'>
+        <div className='sidebar_icon'>
+            <SVGMessage />
+            </div>
             <span className='sidebar_text_message'>Сообщения</span>
         </div>
-        <div>
-            
-            <img className='sidebar_img_test' src={require('../../Img/test.png')} alt="logo"/>
-            <span className='sidebar_text_test'>Тестирование</span>
+        </NavLink>
+
+        <NavLink activeClassName='active' to='/test'>
+        <div className='sidebar_container_test'>
+        <div className='sidebar_icon'>
+            <SVGTest />
         </div>
-        <div>
-           
-            <img className='sidebar_img_faq' src={require('../../Img/faq.png')} alt="logo"/>
+            <span className='sidebar_text_test'>Тест</span>
+        </div>
+        </NavLink>
+
+        <NavLink activeClassName='active' to='/faq'>
+        <div className='sidebar_container_faq'>
+        <div className='sidebar_icon'>
+            <SVGFaq />
+            </div>
             <span className='sidebar_text_faq'>Полезно знать</span>
         </div>
+        </NavLink>
 
+    </div>
 
-        </div>
     )
 }
 export default Sidebar

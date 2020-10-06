@@ -6,7 +6,7 @@ import Sidebar from './Sidebar/Sidebar'
 const Profile = ()=>{
     return(<div className='profile-main'>
         <div>
-            <Sidebar/>
+        <Sidebar/>
         </div>
         <div>
         <ProfileHeader/>
